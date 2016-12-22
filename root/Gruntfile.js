@@ -43,9 +43,7 @@ module.exports = function(grunt) {
             my_target: {
                 files: {
                     'js/master.min.js': [
-                        'js/main.js',
-                        'js/highlight.pack.js',
-                        'js/ezTabs.js'
+                        'js/main.js'
                     ]
                 }
             }
