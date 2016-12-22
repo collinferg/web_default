@@ -1,6 +1,6 @@
-# grunt-init-gruntfile
+# grunt-init web_default
 
-> Create a basic Gruntfile with [grunt-init][].
+> Create a basic Grunt scaffolding with [grunt-init][].
 
 [grunt-init]: http://gruntjs.com/project-scaffolding
 
