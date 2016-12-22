@@ -18,7 +18,7 @@ exports.warnOn = 'Gruntfile.js';
 exports.template = function(grunt, init, done) {
 
   init.process({}, [], function(err, props) {
-    props.package_json = true;
+    props.package_json = 'package.json';
     props.file_name = props.package_json ? '<%= pkg.name %>' : 'FILE_NAME';
 
     // Files to copy (and process).
