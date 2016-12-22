@@ -53,14 +53,6 @@ module.exports = function(grunt) {
             sass: {
                 files: 'scss/*.scss',
                 tasks: ['sass', 'autoprefixer']
-            },
-            cssmin: {
-                files: 'css/master.css',
-                tasks: ['cssmin']
-            },
-            uglify: {
-                files: ['js/*.js', '!js/master.min.js'],
-                tasks: ['uglify']
             }
         }
 
