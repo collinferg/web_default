@@ -67,6 +67,6 @@ module.exports = function(grunt) {
 
     // Register Tasks
     grunt.registerTask('default', ['sass']);
-    grunt.registerTask('production', ['sass', 'cssmin', 'uglify']);
+    grunt.registerTask('production', ['sass', 'autoprefixer', 'cssmin', 'uglify']);
 
 };
