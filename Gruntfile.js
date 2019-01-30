@@ -7,12 +7,8 @@ module.exports = function(grunt) {
 
         sass: {
             dist: {
-                options: {
-                    sourcemap: 'none',
-                    noCache: true
-                },
                 files: {
-                    'css/master.css': 'scss/master.scss'
+                    'web/css/source/master.css': 'web/css/master.scss'
                 }
             }
         },
@@ -22,28 +18,28 @@ module.exports = function(grunt) {
                 browsers: ['last 10 versions', 'ie 8', 'ie 9']
             },
             single_file: {
-                src: 'css/master.css',
-                dest: 'css/master.css'
+                src: 'web/css/source/master.css',
+                dest: 'web/css/source/master.css'
             },
         },
 
         cssmin: {
-          target: {
-            files: [{
-              expand: true,
-              cwd: 'css',
-              src: ['*.css', '!*.min.css'],
-              dest: 'css',
-              ext: '.min.css'
-            }]
-          }
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: 'web/css/source',
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'web/css/source',
+                    ext: '.min.css'
+                }]
+            }
         },
 
         uglify: {
             my_target: {
                 files: {
-                    'js/master.min.js': [
-                        'js/main.js'
+                    'web/js/master.min.js': [
+                        'web/js/main.js'
                     ]
                 }
             }
@@ -51,9 +47,9 @@ module.exports = function(grunt) {
 
         watch: {
             sass: {
-                files: 'scss/*.scss',
+                files: 'web/css/**/*.scss',
                 tasks: ['sass', 'autoprefixer']
-            }
+            },
         }
 
     });
@@ -66,7 +62,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Register Tasks
-    grunt.registerTask('default', ['sass']);
+    grunt.registerTask('default', ['sass', 'autoprefixer']);
     grunt.registerTask('production', ['sass', 'autoprefixer', 'cssmin', 'uglify']);
 
 };
